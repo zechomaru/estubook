@@ -24,3 +24,13 @@ Route::put('periodos/update', [
     'uses' => 'PeriodsController@update',
     'as' => 'periodos.update',
 ]);
+
+Route::put('order-status', [
+    'uses' => 'DashboardController@status',
+    'as' => 'order-status.edit',
+]);
+
+Route::get('details-order/{id}', [
+    'uses' => 'DashboardController@detailsOrder',
+    'as' => 'details-order',
+]);

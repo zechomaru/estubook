@@ -79,8 +79,8 @@
                     {{ Auth::user()->name }} <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu" role="menu">
-                    <li role="presentation"><a href="">Mi Cuenta</a></li>
-                    <li><a href="">Mis Compras</a></li>
+                    <li role="presentation"><a href="{{ route('profile') }}">Mi Cuenta</a></li>
+                    <!-- <li><a href="">Mis Compras</a></li> -->
                     <li>
                       <a href="{{ url('/logout') }}"
                             onclick="event.preventDefault();
@@ -238,14 +238,11 @@ $(document).ready(function() {
     });
     
    
-    // 
     
-});
-</script>
-<script>
     $("#alerts").fadeTo(2000, 500).slideUp(500, function(){
         $("#alerts").slideUp(500);
     });
+});
 </script>
 
 </html>

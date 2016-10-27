@@ -14,10 +14,18 @@ if (!isset($book)) {
 @include('template.select2',['key' => 'authors','label' => 'Autores', 'options' => App\Models\Author::all()])
 <link rel="stylesheet" href="{{ url('plugins/select2/select2.min.css') }}">
 <script src="{{ url('plugins/select2/select2.full.min.js') }}"></script>
-<script>
-  $(function () {
-      //Initialize Select2 Elements
+@if($book != null)
+  <script>
+    $(function () {
+        //Initialize Select2 Elements
 
-      $('.select2').select2().val({!! $book->authors()->getRelatedIds() !!}).trigger('change');
-    });
-</script>
+        $('.select2').select2().val({!! $book->authors()->getRelatedIds() !!}).trigger('change');
+      });
+  </script>
+  @else
+    <script>
+      $(function () {
+          $('.select2').select2();
+        });
+    </script>
+  @endif

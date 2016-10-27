@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('header-title')
-<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <h1>
     Carreras
     <!--<small>Sub title</small> -->

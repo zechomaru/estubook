@@ -69,6 +69,22 @@ Route::post('password/email', [
     'as' => 'password.email.post',
 ]);
 
+Route::get('profile', [
+    'uses' => 'Auth\UsersController@profile',
+    'as' => 'profile',
+]);
+
+Route::post('profile', [
+    'uses' => 'Auth\UsersController@profileEdit',
+    'as' => 'profile.edit',
+]);
+
+Route::get('profile/order-details/{id}', [
+    'uses' => 'Auth\UsersController@orderDetails',
+    'as' => 'auth.order-details',
+]);
+
+
 
 // Carrito -------------
 
